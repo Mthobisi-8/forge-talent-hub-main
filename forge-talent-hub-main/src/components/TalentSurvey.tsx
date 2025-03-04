@@ -4,6 +4,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
+import TAlent from "@/components/TalentSurvey";
 
 type Question = {
   id: number;
@@ -131,9 +132,17 @@ const TalentSurvey = () => {
             <Button onClick={() => window.location.href = '/courses'} className="mt-4 mr-32">
               View Courses
             </Button>
-            <Button onClick={() => window.location.href = '/testing-centre'} className="mt-4">
-              Take Another Assessment
-            </Button>
+            <Button
+             onClick={() => {
+             setAnswers({});
+             setCurrentQuestions(generalQuestions);
+             setCurrentQuestionIndex(0);
+             setShowResults(false);
+             }}
+             className="mt-4"
+>
+  Take Another Assessment
+</Button>
           </div>
         </CardContent>
       </Card>
